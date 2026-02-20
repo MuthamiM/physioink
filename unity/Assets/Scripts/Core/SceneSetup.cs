@@ -24,7 +24,7 @@ public class SceneSetup : MonoBehaviour
         table.name = "Surgical Table";
         table.transform.position = new Vector3(0, 0.8f, 0.5f);
         table.transform.localScale = new Vector3(1.5f, 0.05f, 0.8f);
-        table.GetComponent<Renderer>().material.color = new Color(0.8f, 0.9f, 1.0f); // Sterile blue
+        table.GetComponent<Renderer>().material = Resources.Load<Material>("Materials/Table");
     }
 
     void GenerateArm()
@@ -51,7 +51,10 @@ public class SceneSetup : MonoBehaviour
         layer.transform.localRotation = Quaternion.Euler(0, 0, 90); // Horizontal arm
         layer.transform.localScale = new Vector3(radius * 2, armLength / 2, radius * 2);
         
-        layer.GetComponent<Renderer>().material.color = color;
+        // Load material from Resources
+        Material mat = Resources.Load<Material>($"Materials/{name.Split(' ')[0]}"); // E.g. "Materials/Skin"
+        if (mat != null) layer.GetComponent<Renderer>().material = mat;
+        else layer.GetComponent<Renderer>().material.color = color; // Fallback
         
         // Add Tissue Logic
         TissueLayer tl = layer.AddComponent<TissueLayer>();
