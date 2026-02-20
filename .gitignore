@@ -1,26 +1,33 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-.env
-*.egg-info/
-dist/
-build/
-venv/
-.venv/
+# Unity
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
 
-# .NET
-bin/
-obj/
-*.user
-*.suo
-
-# IDE
+# Visual Studio / VS Code
 .vs/
 .vscode/
-.idea/
-*.swp
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
 
 # OS
-Thumbs.db
 .DS_Store
+Thumbs.db
+
+# Builds
+build/
+Build/

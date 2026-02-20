@@ -1,8 +1,0 @@
-fastapi
-uvicorn[standard]
-langchain
-pydantic
-websockets
-python-dotenv
-openai
-pyperclip
