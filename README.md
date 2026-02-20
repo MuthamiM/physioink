@@ -18,14 +18,11 @@ This project is our submission for the [Logitech DevStudio 2026 Challenge](https
 PhysioInk/
 ├── unity/                   # Unity Project (The Build)
 │   ├── Assets/Scripts/      # C# Logic
-│   │   ├── Core/            # MXInkManager, TissueLayer, HapticFeedback
-│   │   └── Tools/           # ScalpelTool, ProbeTool
-│   └── Assets/Prefabs/      # Tissue blocks, Scalpel model
+│   │   ├── Core/            # MXInkManager, TissueLayer, SceneSetup
+│   │   └── Tools/           # ScalpelTool, HapticFeedback
+│   └── Assets/Prefabs/      # Generated at runtime
 ├── docs/                    # Pitch Materials
-│   ├── devpost_pitch.md     # Devpost text
-│   ├── video_script.md      # 1-minute video script
-│   └── concept_art/         # Visuals
-└── README.md
+├── README.md
 ```
 
 ## 🚀 The Solution
@@ -35,16 +32,16 @@ PhysioInk turns the MX Ink stylus into a **precision medical instrument** inside
 | Feature | MX Ink Capability | Implementation |
 |---------|-------------------|----------------|
 | **Virtual Scalpel** | Pressure sensitivity → incision depth | `ScalpelTool.cs`, `TissueLayer.cs` |
+| **Procedural Anatomy**| Dynamic generation of muscle/bone layers | `SceneSetup.cs` |
 | **3D Annotation** | 6DoF tracking + air drawing | `MXInkManager.cs` |
-| **Surface Tracing** | 2D mode on real surfaces | (Planned for Phase 2) |
 | **Haptic Tissue Feedback** | Haptic feedback API | `HapticFeedback.cs` |
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Assets
 
 - **Engine**: Unity 2022.3 LTS
 - **MR SDK**: Meta Core SDK v68+
 - **Stylus**: MX Ink OpenXR Interaction Profile
-- **Platform**: Meta Quest 3
+- **Assets**: **Procedurally Generated** via `SceneSetup.cs` (Keeps repo light & modular)
 
 ## 👥 Team
 
